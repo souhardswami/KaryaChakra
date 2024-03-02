@@ -1,0 +1,18 @@
+/* TaskFilter.css */
+label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Add specific styles for TaskFilter component here */
+  
