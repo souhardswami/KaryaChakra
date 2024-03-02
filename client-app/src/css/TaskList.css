@@ -1,58 +1,90 @@
 ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  strong {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  button {
-    padding: 8px 16px;
-    font-size: 12px;
-    margin-left: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button.start {
-    background-color: #2196f3;
-    color: #fff;
-  }
+  list-style: none;
+  padding: 0;
+}
 
-  button.start:hover {
-    background-color: #105892;
-    color: #fff;
-  }
-  
-  button.complete {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  button.complete:hover {
-    background-color: #337335;
-    color: #fff;
-  }
-  
-  button.delete {
-    background-color: #f44336;
-    color: #fff;
-  }
-  button.delete:hover {
-    background-color: #cc1205;
-    color: #fff;
-  }
-  
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+li[data-status="To Do"] {
+  background-color: #d6ebfd;
+}
+
+li[data-status="In Progress"] {
+  background-color: #c8f4c8; 
+}
+
+li[data-status="Done"] {
+  background-color: #ffe6e6; 
+}
+
+li:hover {
+  transform: scale(1.03);
+  background-color: #f9f9f9; 
+}
+
+strong {
+  font-size: 18px;
+  color: #333;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 12px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button.start {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+button.start:hover {
+  background-color: #105892;
+}
+
+button.complete {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button.complete:hover {
+  background-color: #337335;
+}
+
+button.delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.task-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.task-status {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+

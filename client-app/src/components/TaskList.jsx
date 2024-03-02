@@ -5,7 +5,7 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask }) => {
   return (
     <ul>
       {tasks.map((task) => (
-        <li key={task.id}>
+        <li key={task.id} data-status={task.status}>
           <div>
             <strong>{task.title}</strong>
             <p>{task.description}</p>

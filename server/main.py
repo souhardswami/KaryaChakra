@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Integer, String, Enum
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, Session  
+from sqlalchemy.orm import sessionmaker, Session
 from typing import List
 
 DATABASE_URL = "sqlite:///./test.db"
@@ -64,7 +64,7 @@ def get_db():
 
 @app.post("/tasks", response_model=TaskResponse)
 def create_task(task: TaskCreate, db: Session = Depends(get_db)):
-    
+
     if not task.title or task.status not in ["To Do", "In Progress", "Done"]:
         raise HTTPException(status_code=400, detail="Invalid task data")
 
