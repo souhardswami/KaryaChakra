@@ -5,9 +5,36 @@ body {
     background-color: #f4f4f4;
   }
   
+
 .app {
-    max-width: 400px;
-    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left-panel {
+    width: 40%;
+    height: 280px;
+    padding: 10px;
+    background-color: rgb(230, 245, 248);
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+  .right-panel {
+    padding: 30px;
+    width: 40%; /* Adjust as needed */
+  }
+  
+  .right-panel {
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    max-height: 500px; /* Set a maximum height for the task list */
+  }
+  
+  
+.app {
+    /* max-width: 400px; */
+    
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,6 +43,4 @@ body {
 h1 {
     color: rgb(0, 0, 0);
   }
-  
-
   

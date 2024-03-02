@@ -84,20 +84,40 @@ const TaskManager = () => {
   const filteredTasks =
     filter === "All" ? tasks : tasks.filter((task) => task.status === filter);
 
-  return (
+//   return (
+//     <div className="app">
+//       <h1> - Task Management App - </h1>
+//       <TaskForm onCreateTask={handleCreateTask} />
+//       <TaskFilter onFilterChange={handleFilterChange} />
+//       {loading ? (
+//         <LoadingIndicator />
+//       ) : (
+//         <TaskList
+//           tasks={filteredTasks}
+//           onUpdateTask={handleUpdateTask}
+//           onDeleteTask={handleDeleteTask}
+//         />
+//       )}
+//     </div>
+//   );
+
+
+
+return (
     <div className="app">
-      <h1> - Task Management App - </h1>
-      <TaskForm onCreateTask={handleCreateTask} />
-      <TaskFilter onFilterChange={handleFilterChange} />
-      {loading ? (
-        <LoadingIndicator />
-      ) : (
+      <div className="left-panel">
+        <h1>Create Task</h1>
+        <TaskForm onCreateTask={handleCreateTask} />
+      </div>
+      <div className="right-panel">
+        <h1>Task List</h1>
+        <TaskFilter onFilterChange={setFilter} />
         <TaskList
-          tasks={filteredTasks}
+          tasks={tasks.filter((task) => (filter === "All" ? true : task.status === filter))}
           onUpdateTask={handleUpdateTask}
           onDeleteTask={handleDeleteTask}
         />
-      )}
+      </div>
     </div>
   );
 };
