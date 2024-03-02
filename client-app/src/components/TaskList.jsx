@@ -4,7 +4,7 @@ import '../css/TaskList.css';
 const TaskList = ({ tasks, onUpdateTask, onDeleteTask }) => {
   return (
     <ul>
-      {tasks.map((task) => (
+      {tasks.length > 0 ?tasks.map((task) => (
         <li key={task.id} data-status={task.status}>
           <div>
             <strong>{task.title}</strong>
@@ -17,7 +17,7 @@ const TaskList = ({ tasks, onUpdateTask, onDeleteTask }) => {
             <button onClick={() => onDeleteTask(task.id)} className="delete">Delete</button>
           </div>
         </li>
-      ))}
+      )) : <h1> No Task 😀</h1>}
     </ul>
   );
 };
