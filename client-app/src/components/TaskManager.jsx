@@ -10,13 +10,14 @@ const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("All");
   const [loading, setLoading] = useState(true);
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
   useEffect(() => {
     fetchTasks();
   }, []);
 
   const fetchTasks = () => {
-    fetch("http://localhost:8000/tasks")
+    fetch(`${apiUrl}/tasks`)
       .then((response) => response.json())
       .then((data) => setTasks(data))
       .catch((error) => console.error("Error fetching tasks:", error))
@@ -28,7 +29,7 @@ const TaskManager = () => {
   };
 
   const createTask = (newTask) => {
-    fetch("http://localhost:8000/tasks", {
+    fetch(`${apiUrl}/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +46,7 @@ const TaskManager = () => {
   };
 
   const updateTaskStatus = (taskId, newStatus) => {
-    fetch(`http://localhost:8000/tasks/${taskId}`, {
+    fetch(`${apiUrl}/tasks/${taskId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +69,7 @@ const TaskManager = () => {
   };
 
   const deleteTask = (taskId) => {
-    fetch(`http://localhost:8000/tasks/${taskId}`, {
+    fetch(`${apiUrl}/tasks/${taskId}`, {
       method: "DELETE",
     })
       .then(() =>
@@ -83,24 +84,6 @@ const TaskManager = () => {
 
   const filteredTasks =
     filter === "All" ? tasks : tasks.filter((task) => task.status === filter);
-
-//   return (
-//     <div className="app">
-//       <h1> - Task Management App - </h1>
-//       <TaskForm onCreateTask={handleCreateTask} />
-//       <TaskFilter onFilterChange={handleFilterChange} />
-//       {loading ? (
-//         <LoadingIndicator />
-//       ) : (
-//         <TaskList
-//           tasks={filteredTasks}
-//           onUpdateTask={handleUpdateTask}
-//           onDeleteTask={handleDeleteTask}
-//         />
-//       )}
-//     </div>
-//   );
-
 
 
 return (
