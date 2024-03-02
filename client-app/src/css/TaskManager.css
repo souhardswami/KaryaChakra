@@ -18,12 +18,4 @@ h1 {
   }
   
 
-  .app {
-  display: flex;
-  justify-content: space-between;
-}
-
-.left-panel,
-.right-panel {
-  width: 45%; 
-}
+  
