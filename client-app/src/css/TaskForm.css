@@ -1,4 +1,3 @@
-/* TaskForm.css */
 form {
     margin-bottom: 20px;
   }
@@ -33,6 +32,4 @@ form {
   button:hover {
     background-color: #45a049;
   }
-  
-  /* Add specific styles for TaskForm component here */
   

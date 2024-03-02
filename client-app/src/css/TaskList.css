@@ -1,4 +1,3 @@
-/* TaskList.css */
 ul {
     list-style: none;
     padding: 0;
@@ -32,9 +31,19 @@ ul {
     background-color: #2196f3;
     color: #fff;
   }
+
+  button.start:hover {
+    background-color: #105892;
+    color: #fff;
+  }
   
   button.complete {
     background-color: #4caf50;
+    color: #fff;
+  }
+  
+  button.complete:hover {
+    background-color: #337335;
     color: #fff;
   }
   
@@ -42,6 +51,8 @@ ul {
     background-color: #f44336;
     color: #fff;
   }
-  
-  /* Add specific styles for TaskList component here */
+  button.delete:hover {
+    background-color: #cc1205;
+    color: #fff;
+  }
   

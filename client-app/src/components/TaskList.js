@@ -1,4 +1,3 @@
-// TaskList.js
 import React from 'react';
 import '../css/TaskList.css';
 

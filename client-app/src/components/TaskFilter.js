@@ -1,4 +1,3 @@
-// TaskFilter.js
 import React from 'react';
 import "../css/TaskFilter.css";
 
